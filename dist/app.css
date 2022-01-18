@@ -19,16 +19,18 @@ body {
     height: 100vh;
     width: 100%;
 }
-.tasklist{
+
+.tasklist {
     width: 70%;
     margin: auto;
     border-radius: 20px;
     background: #f8f8f87c;
     text-align: center;
-    padding:1.5rem;
-   
+    padding: 1.5rem;
+
 }
-.tasks{
+
+.tasks {
     background: #f8f8f834;
     width: 70%;
     padding: 1rem;
@@ -37,7 +39,7 @@ body {
     box-shadow: 2px 4px 10px 0 #464646;
 }
 
-.form{
+.form {
     width: 70%;
     border-radius: 20px;
     background: #f8f8f834;
@@ -55,37 +57,78 @@ body {
 #task {
     border: 2px solid #000;
     border-radius: 20px;
-    width: 60%;
+    width: 80%;
     padding: 0.5rem;
     text-align: center;
     font-size: 1.3rem;
     font-weight: 600;
 }
 
+#list-task {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+trow {
+    width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+td {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    /* padding: 1rem; */
+}
+
 .btn {
     box-shadow: none;
     border-radius: 15px;
     font-size: 1.5rem;
-    width: 30%;
+    width: 35%;
     height: auto;
     margin: auto;
     padding: 0.7rem;
-    background:linear-gradient(46deg, #CC00FF, #FF0000) ;
+    background: linear-gradient(46deg, #CC00FF, #FF0000);
     color: #000;
     font-weight: 650;
 }
+
+.btn-small {
+    box-shadow: none;
+    border-radius: 15px;
+    height: auto;
+    margin: auto;
+    padding: 0.5rem;
+    background: #ff0000;
+    color: #000;
+    font-weight: 650;
+    display: none;
+}
+
 .btn:hover,
-.btn a{
+.btn a,
+.btn-small:hover,
+.btn-small a {
     box-shadow: 3px 2px 10px #000;
     background: linear-gradient(46deg, #CC00FF, #FF0000);
     transform: scale(1.1)
 }
+
 @media screen and (max-width: 550px) {
-    .tasklist{
+    .tasklist {
         width: 90%;
     }
+
     .form,
-    .tasks{
+    .tasks {
         width: 90%;
     }
 }

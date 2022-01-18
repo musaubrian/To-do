@@ -2,20 +2,9 @@ import { initializeApp } from "firebase/app";
 import {
     getFirestore, collection, onSnapshot,
     addDoc, serverTimestamp, query,
-    orderBy,
-    getDoc,
-    getDocs
+    orderBy
 } from "firebase/firestore"
-
-const firebaseConfig = {
-  apiKey: "AIzaSyDfm77Ru_ocbAhpAw1h5d8qQMZlSbDAjNU",
-  authDomain: "to-do-5e.firebaseapp.com",
-  projectId: "to-do-5e",
-  storageBucket: "to-do-5e.appspot.com",
-  messagingSenderId: "27566996647",
-  appId: "1:27566996647:web:32a30eff02147ad5bcef82",
-  measurementId: "G-M8ZD8V603B"
-};
+import { firebaseConfig } from "./firebaseConfig";
 
 // Initialize Firebase
 initializeApp(firebaseConfig);
@@ -34,8 +23,7 @@ onSnapshot(q, (snapshot) => {
     snapshot.docs.forEach(doc => {
       tasks.push(doc.data(tasks))
       AddAllItems(tasks)
-    })
-    console.log(tasks)    
+    })  
 })
 
 // adding docs
@@ -53,7 +41,7 @@ addTaskForm.addEventListener('submit', (e) => {
 })
 
 //adding to table
-var tbody = document.getElementById('task');
+var tbody = document.getElementById('list-task');
 
 function AddItem(task) {
   let trow = document.createElement("trow");
@@ -71,20 +59,3 @@ function AddAllItems(tasks) {
     AddItem(element.task);
   });
 }
-
-// //getting documents
-// async function getAllDataOnce(){
-//   const querySnapshot = await getDocs(colRef);
-//   var tasks = [];
-//   querySnapshot.forEach(doc => {
-//     tasks.push(doc.data(mytask));
-//   });
-//   AddAllItems(tasks);
-// }
-
-// window.onload = getAllDataOnce;
-
-
-
-
-
