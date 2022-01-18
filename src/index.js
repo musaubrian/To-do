@@ -3,7 +3,8 @@ import {
     getFirestore, collection, onSnapshot,
     addDoc, serverTimestamp, query,
     orderBy,
-    getDoc
+    getDoc,
+    getDocs
 } from "firebase/firestore"
 
 const firebaseConfig = {
@@ -31,7 +32,8 @@ const q = query(colRef, orderBy('createdAt'))
 onSnapshot(q, (snapshot) => {
     let tasks = []
     snapshot.docs.forEach(doc => {
-      tasks.push({ ...doc.data(), id: doc.id })
+      tasks.push(doc.data(tasks))
+      AddAllItems(tasks)
     })
     console.log(tasks)    
 })
@@ -42,13 +44,46 @@ addTaskForm.addEventListener('submit', (e) => {
   e.preventDefault()
 
   addDoc(colRef, {
-    mytask: addTaskForm.task.value,
+    task: addTaskForm.task.value,
     createdAt: serverTimestamp()
   })
     .then(() => {
     addTaskForm.reset()
   })
 })
+
+//adding to table
+var tbody = document.getElementById('task');
+
+function AddItem(task) {
+  let trow = document.createElement("trow");
+  let td = document.createElement('td');
+
+  td.innerHTML = task;
+  trow.appendChild(td)
+
+  tbody.appendChild(trow)
+}
+
+function AddAllItems(tasks) {
+  tbody.innerHTML = "";
+  tasks.forEach(element => {
+    AddItem(element.task);
+  });
+}
+
+// //getting documents
+// async function getAllDataOnce(){
+//   const querySnapshot = await getDocs(colRef);
+//   var tasks = [];
+//   querySnapshot.forEach(doc => {
+//     tasks.push(doc.data(mytask));
+//   });
+//   AddAllItems(tasks);
+// }
+
+// window.onload = getAllDataOnce;
+
 
 
 
