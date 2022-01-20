@@ -139,4 +139,7 @@ td {
         margin: auto auto 1rem auto;
         justify-content: center;
     }
+    .modal {
+        width: 90%;
+    }
 }
