@@ -31,25 +31,23 @@ body {
 }
 
 .tasks {
-    background: #f8f8f834;
-    width: 70%;
+    width: 100%;
     padding: 1rem;
     margin: 0 auto 1rem auto;
-    border-radius: 15px;
-    box-shadow: 2px 4px 10px 0 #464646;
 }
 
 .form {
-    width: 70%;
+    width: 100%;
     border-radius: 20px;
-    background: #f8f8f834;
-    margin: auto;
+    background: #afafaf8f;
+    backdrop-filter: blur;
+    margin: none;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
-    padding: 0.5rem;
+    padding: 2rem;
     text-align: center;
     box-shadow: 3px 4px 15px 0 #535353d8;
 }
@@ -73,10 +71,13 @@ body {
 }
 
 trow {
-    width: 100%;
+    width: 40%;
+    margin: auto auto 1rem auto;
+    justify-content: center;
     display: flex;
     align-content: center;
-    justify-content: center;
+    /* border: 2px solid #1d1d1dbe;
+    border-radius: 20px; */
 }
 
 td {
@@ -85,13 +86,15 @@ td {
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
-    /* padding: 1rem; */
+    box-shadow: 2px 3px 10px #5a5a5a9f;
+    padding: 1rem;
+    border-radius: 20px;
 }
 
 .btn {
     box-shadow: none;
     border-radius: 15px;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     width: 35%;
     height: auto;
     margin: auto;
@@ -99,27 +102,28 @@ td {
     background: linear-gradient(46deg, #CC00FF, #FF0000);
     color: #000;
     font-weight: 650;
+    display: flex;
+    justify-content: center;
 }
 
-.btn-small {
-    box-shadow: none;
-    border-radius: 15px;
-    height: auto;
-    margin: auto;
-    padding: 0.5rem;
-    background: #ff0000;
-    color: #000;
-    font-weight: 650;
-    display: none;
+.material-icons {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #afafaf8f;
 }
 
 .btn:hover,
 .btn a,
-.btn-small:hover,
 .btn-small a {
     box-shadow: 3px 2px 10px #000;
-    background: linear-gradient(46deg, #CC00FF, #FF0000);
+    background: linear-gradient(46deg, #FF0000,#CC00FF);
     transform: scale(1.1)
+}
+
+.modal {
+    border-radius: 20px;
+    box-shadow: none;
+    width: 60%;
 }
 
 @media screen and (max-width: 550px) {
@@ -127,8 +131,12 @@ td {
         width: 90%;
     }
 
-    .form,
-    .tasks {
-        width: 90%;
+    .btn{
+        width: auto;
+    }
+    trow {
+        width: 100%;
+        margin: auto auto 1rem auto;
+        justify-content: center;
     }
 }
