@@ -36,10 +36,9 @@ addTaskForm.addEventListener('submit', (e) => {
     createdAt: serverTimestamp()
   })
     .then(() => {
-    addTaskForm.reset()
+      addTaskForm.reset()
   })
 })
-
 //adding to table
 var tbody = document.getElementById('list-task');
 
