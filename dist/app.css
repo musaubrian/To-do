@@ -33,7 +33,7 @@ body {
 .tasks {
     width: 100%;
     padding: 1rem;
-    margin: 0 auto 1rem auto;
+    margin: 0 auto 1rem;
 }
 
 .form {
@@ -72,7 +72,7 @@ body {
 
 trow {
     width: 40%;
-    margin: auto auto 1rem auto;
+    margin: auto auto 1rem;
     justify-content: center;
     display: flex;
     align-content: center;
@@ -136,7 +136,7 @@ td {
     }
     trow {
         width: 100%;
-        margin: auto auto 1rem auto;
+        margin: auto auto 1rem;
         justify-content: center;
     }
     .modal {
